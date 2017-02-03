@@ -29,6 +29,7 @@ CellAddress.prototype.isEqual = function isEqual(other) {
     return this.column === other.column && this.row === other.row;
 };
 
+/** v1
 CellAddress.prototype.to = function to(other) {
     var result = [];
 
@@ -46,11 +47,62 @@ CellAddress.prototype.to = function to(other) {
 
     return result;
 };
+*/
+
+// v2
+CellAddress.prototype.to = function to(other) {
+    var result = [];
+
+    if ( this.isVertical(other) ) {
+        result = this.vTo(other);
+    } else if ( this.isHorizontal(other) ) {
+        result = this.hTo(other);
+    } else {
+        throw new Error();
+    }
+
+    return result;
+};
 
 CellAddress.prototype.isVertical = function(other) {
     return this.column === other.column ;
 };
 
+CellAddress.prototype.vTo = function vTo(other) {
+    var result = [ this ];
+    var next = this;
+
+    do {
+        next = next.vSucc();
+        result.push(next);
+    } while ( !next.isEqual(other) )
+
+    return result;
+};
+
+CellAddress.prototype.hTo = function vTo(other) {
+    var result = [ this ];
+    var next = this;
+
+    do {
+        next = next.vSucc();
+        result.push(next);
+    } while ( !next.isEqual(other) )
+
+    return result;
+};
+
 CellAddress.prototype.isHorizontal = function(other) {
     return this.row  === other.row ;
+};
+
+CellAddress.prototype.hSucc = function hSucc() {
+    var colAsscii = this.column.charCodeAt(0);
+    var nextCol = String.fromCharCode( colAsscii + 1 );
+    return new CellAddress( nextCol, this.row );
+};
+
+CellAddress.prototype.vSucc = function hSucc() {
+    var nextRow = this.row + 1;
+    return new CellAddress( this.column, nextRow );
 };
