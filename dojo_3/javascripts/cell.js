@@ -1,18 +1,24 @@
+var Nobody = require('./nobody');
+
 function Cell( _habitant ) {
-    this.habitant = _habitant;
+    this.habitant = _habitant || new Nobody();
 };
 
-Cell.prototype.releasesBy = function releasesBy( something ) {
-    this.habitant = null;
+Cell.prototype.releasedBy = function releasesBy( something ) {
+    this.habitant = new Nobody();
 };
 
-Cell.prototype.reclaimsBy = function reclaimsBy( something ) {
-    if ( this.habitant ) {
-        throw new Error();
-    };
-
-    this.habitant = something;
+Cell.prototype.reclaimedBy = function reclaimsBy( something ) {
+    this.habitant = this.habitant.bumpsInto(something);
 };
+
+Cell.prototype.isEmpty = function() {
+    return this.habitant.isEqual( new Nobody() );
+}
+
+Cell.prototype.asArray = function() {
+    return [this];
+}
 
 module.exports = Cell;
 
