@@ -1,18 +1,17 @@
 package com.mercadolibre.dojos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Order {
 
     private Money orderValue;
-    private Money orderBalance;
     private List<PaymentMethod> paymentMethodList;
+    private Shipment shipment;
 
     Order(Money orderValue){
         this.paymentMethodList = new ArrayList<PaymentMethod>();
         this.orderValue = orderValue;
-        this.orderBalance = orderValue;
+        this.shipment = new Shipment(new Money(0.0));
     }
 
     public void addPayment(PaymentMethod paymentMethod) {
@@ -20,32 +19,36 @@ public class Order {
     }
 
 
-    public void pay() {
-
-        for (PaymentMethod paymentMethod: this.paymentMethodList) {
-            Money withdrawnMoney = paymentMethod.withdraw(orderBalance);
-            orderBalance.minus(withdrawnMoney);
-        }
-
-    }
-
-    public Money leftToPay() {
-        Money leftToPayMoney = new Money(this.orderValue);
-
-        for (PaymentMethod paymentMethod: this.paymentMethodList) {
-            leftToPayMoney.minus(paymentMethod.contribution(leftToPayMoney));
-        }
-
-        return leftToPayMoney;
-    }
-
     public String print(){
         String orderPrint = "";
+        Money leftToPayMoney = totalCost();
 
-        for (PaymentMethod paymentMethod: this.paymentMethodList) {
-            orderPrint += paymentMethod.print();
+        Collections.sort(this.paymentMethodList);
+
+        Iterator<PaymentMethod> paymentMethodIterator = this.paymentMethodList.iterator();
+
+        while (!leftToPayMoney.zero() && paymentMethodIterator.hasNext()){
+            PaymentMethod paymentMethod = paymentMethodIterator.next();
+
+            orderPrint += paymentMethod.printContribution(leftToPayMoney) + " ";
+            leftToPayMoney.minus( paymentMethod.contribution(leftToPayMoney) );
+
         }
 
         return orderPrint;
     }
+
+    public void shipWith(Shipment shipment) {
+        this.shipment = shipment;
+    }
+
+    private Money totalCost() {
+        Money totalCost = new Money(this.orderValue);
+
+        totalCost.add(this.shipment.cost());
+
+        return totalCost;
+    }
+
+
 }

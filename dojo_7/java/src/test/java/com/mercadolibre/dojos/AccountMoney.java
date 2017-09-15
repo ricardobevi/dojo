@@ -1,10 +1,14 @@
 package com.mercadolibre.dojos;
 
-public class AccountMoney implements PaymentMethod {
+public class AccountMoney implements PaymentMethod{
     public Money balance;
 
     public AccountMoney(Money balance) {
         this.balance = balance;
+    }
+
+    public PaymentMethodType type() {
+        return PaymentMethodType.ACCOUNT_MONEY;
     }
 
     public Money contribution(Money maxContribution) {
@@ -23,8 +27,23 @@ public class AccountMoney implements PaymentMethod {
         return "Dinero en cuenta: " + this.balance.print();
     }
 
-    public Money balance() {
-        return balance;
+    public String printContribution(Money leftToPayMoney) {
+        return "Dinero en cuenta: " + this.contribution(leftToPayMoney).print();
     }
 
+
+    public int compareTo(PaymentMethod paymentMethod) {
+        int comparator = 0;
+
+        switch (paymentMethod.type()) {
+            case GIFTCARD:
+                comparator = 1;
+                break;
+            case CARD:
+                comparator = -1;
+                break;
+        }
+
+        return comparator;
+    }
 }

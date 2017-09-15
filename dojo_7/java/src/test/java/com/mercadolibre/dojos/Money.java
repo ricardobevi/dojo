@@ -40,4 +40,8 @@ public class Money {
 
         return new Money(tryWithdrawValue);
     }
+
+    public boolean zero(){
+        return this.value.equals(0.0);
+    }
 }
