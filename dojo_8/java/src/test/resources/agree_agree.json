@@ -1,0 +1,359 @@
+{
+  "buyer": {
+    "settings": {}
+  },
+  "flow_type": "purchase",
+  "item": {
+    "available_quantity": 184,
+    "buying_mode": "buy_it_now",
+    "category_id": "MLA1903",
+    "currency_id": "ARS",
+    "id": "MLA657858958",
+    "picture": "http://mla-s1-p.mlstatic.com/425325-MLA25425182114_032017-I.jpg",
+    "price": 3200,
+    "quantity": 1,
+    "seller_id": 226075355,
+    "shipping": {
+      "free_shipping": false,
+      "local_pick_up": false,
+      "mode": "not_specified"
+    },
+    "shipping_type": "not_specified",
+    "site_id": "MLA",
+    "title": "Item De Testeo, Por Favor No Ofertar --kc:off"
+  },
+  "payment": {
+    "billing_info": {
+      "check_shipping": true,
+      "document": {
+        "number": "32659430",
+        "type": "DNI"
+      },
+      "label": "Documento para la facturación",
+      "skip_billing_info": false,
+      "supported_document_types": [
+        "DNI",
+        "CUIT"
+      ]
+    },
+    "combination": {
+      "feature_enable": {
+        "expressions": [
+          {
+            "type": "number",
+            "value": 0
+          },
+          {
+            "type": "number",
+            "value": 1
+          }
+        ],
+        "type": "eq"
+      },
+      "initial_switch_state": {
+        "expressions": [
+          {
+            "type": "number",
+            "value": 0
+          },
+          {
+            "type": "number",
+            "value": 1
+          }
+        ],
+        "type": "eq"
+      }
+    },
+    "document_types": [
+      {
+        "id": "DNI",
+        "max_length": 8,
+        "min_length": 7,
+        "regex": "^[0-9]{7,8}$",
+        "subtypes": null
+      },
+      {
+        "algorithm": "CUIT",
+        "id": "CUIT",
+        "max_length": 11,
+        "min_length": 11,
+        "regex": "^[0-9]{11}$",
+        "subtypes": null
+      }
+    ],
+    "payment_options": {
+      "action": {
+        "id": "go_to_bank_promos",
+        "text": "Ver promociones bancarias",
+        "url": "https://www.mercadolibre.com.ar/gz/promociones-bancos"
+      },
+      "options": [
+        {
+          "description": "",
+          "distance_to_branches": true,
+          "icon": "cash",
+          "row_display_type": "payment_methods",
+          "title": "Efectivo",
+          "type": "cash"
+        }
+      ],
+      "title": "¿Cómo quieres pagar?"
+    },
+    "settings": {
+      "differential_pricing_id": null,
+      "immediate_payment": true,
+      "immediate_payment_with_shipment": true
+    }
+  },
+  "review": {
+    "summary": {
+      "details": [
+        {
+          "id": "product",
+          "title": "Producto"
+        },
+        {
+          "id": "shipment",
+          "title": "Envío"
+        },
+        {
+          "id": "coupon",
+          "title": "Descuento"
+        },
+        {
+          "id": "subtotal",
+          "title": "Subtotal"
+        },
+        {
+          "id": "payment",
+          "title": "Pagas"
+        },
+        {
+          "id": "total",
+          "title": "Total"
+        }
+      ]
+    }
+  },
+  "seller": {
+    "id": 226075355,
+    "name": null
+  },
+  "shipping": {
+    "contact_info": {
+      "contacts": [
+        {
+          "name": "",
+          "phone": "",
+          "title": "Otra persona",
+          "type": "add_contact"
+        }
+      ],
+      "input_contact": {
+        "title": "Datos de contacto",
+        "validations": [
+          {
+            "id": "phone",
+            "label": "Teléfono",
+            "max_length": 20,
+            "min_length": 8,
+            "regex": "^\\+?[0-9 \\)\\(-]{8,}$",
+            "required": true
+          },
+          {
+            "id": "name",
+            "label": "Nombre y Apellido",
+            "max_length": 30,
+            "min_length": 4,
+            "regex": "^[A-Za-zÀ-Ÿà-ÿ ,.']+$",
+            "required": true
+          }
+        ]
+      },
+      "subtitle": "Si el correo tiene algún inconveniente con la entrega, se comunicará a la brevedad.",
+      "title": "Datos de contacto"
+    },
+    "input_address": {
+      "title": "¿Dónde quieres recibirlo?",
+      "unknown_zipcode_url": "https://addresses.mercadolibre.com.ar/getZipCodeStateList?js=true&mode=mobile",
+      "validations": [
+        {
+          "id": "zip_code",
+          "label": "Código postal",
+          "max_length": 4,
+          "min_length": 4,
+          "regex": "[0-9]+",
+          "required": true,
+          "type": "input"
+        },
+        {
+          "id": "street_name",
+          "label": "Calle",
+          "max_length": 70,
+          "min_length": 4,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": true,
+          "type": "input"
+        },
+        {
+          "checkbox_available": true,
+          "id": "street_number",
+          "label": "Número",
+          "max_length": 5,
+          "min_length": 1,
+          "regex": "[0-9]+",
+          "required": true,
+          "type": "input"
+        },
+        {
+          "hint": "Ej.: Piso 8, Departamento 6",
+          "id": "additional_info",
+          "label": "Piso / Departamento (opcional)",
+          "max_length": 150,
+          "min_length": 0,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": false,
+          "type": "input"
+        },
+        {
+          "hint": "Ej.: Av. Corrientes y Libertad",
+          "id": "between_streets",
+          "label": "Entre calles (opcional)",
+          "max_length": 150,
+          "min_length": 0,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": false,
+          "type": "input"
+        },
+        {
+          "hint": "Ej.: Casa con rejas negras, frente al parque",
+          "id": "references",
+          "label": "Referencias (opcional)",
+          "max_length": 150,
+          "min_length": 0,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": false,
+          "type": "input"
+        },
+        {
+          "id": "city",
+          "label": "Localidad / Barrio",
+          "max_length": 50,
+          "min_length": 3,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": true,
+          "type": "input"
+        }
+      ]
+    },
+    "shipping_methods": {
+      "shipping_options_groups": {},
+      "shipping_selections": [
+        {
+          "description": null,
+          "id": "to_agree",
+          "method_type": "option",
+          "shipping_type": "to_agree",
+          "title": "Acordar con el vendedor"
+        }
+      ],
+      "subtitle": null,
+      "title": "¿Cómo quieres recibir el producto?"
+    },
+    "shipping_options": [
+      {
+        "description": null,
+        "icon": "to_agree",
+        "id": "to_agree",
+        "review": {
+          "disclaimers": [],
+          "icon": "to_agree"
+        },
+        "shipping_type": "to_agree",
+        "subtitle": null,
+        "title": "Acordaré luego de la compra"
+      }
+    ],
+    "stored_addresses": {
+      "addresses": [],
+      "title": "¿Qué envío prefieres?"
+    }
+  },
+  "tracks": null,
+  "user_identification": {
+    "document": {
+      "number": "32659430",
+      "type": "DNI"
+    },
+    "document_types": [
+      {
+        "id": "DNI",
+        "max_length": 8,
+        "min_length": 7,
+        "regex": "^[0-9]{7,8}$",
+        "subtypes": null
+      },
+      {
+        "algorithm": "CUIT",
+        "id": "CUIT",
+        "max_length": 11,
+        "min_length": 11,
+        "regex": "^[0-9]{11}$",
+        "subtypes": null
+      }
+    ],
+    "prompt": {
+      "expressions": [
+        {
+          "expressions": [
+            {
+              "expressions": [
+                {
+                  "type": "user_choice",
+                  "value": "shipping.type"
+                },
+                {
+                  "type": "string",
+                  "value": "to_agree"
+                }
+              ],
+              "type": "not_eq"
+            },
+            {
+              "expressions": [
+                {
+                  "type": "user_choice",
+                  "value": "shipping.type"
+                },
+                {
+                  "type": "string",
+                  "value": "local_pick_up"
+                }
+              ],
+              "type": "not_eq"
+            }
+          ],
+          "type": "and"
+        },
+        {
+          "expressions": [
+            {
+              "type": "user_choice",
+              "value": "purchase.price"
+            },
+            {
+              "type": "number",
+              "value": 1000
+            }
+          ],
+          "type": "gte"
+        }
+      ],
+      "type": "or"
+    },
+    "skip_billing_info": false,
+    "view": {
+      "title": "Documento para la facturación"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 package com.mercadolibre.dojos.dto;
 
 
-
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by glevy on 3/31/16.
@@ -9,7 +9,9 @@ package com.mercadolibre.dojos.dto;
 public class ItemShippingDto {
 
     private String mode;
+    @SerializedName("local_pick_up")
     private boolean localPickUp;
+    @SerializedName("free_shipping")
     private boolean freeShipping;
 
     public ItemShippingDto() {

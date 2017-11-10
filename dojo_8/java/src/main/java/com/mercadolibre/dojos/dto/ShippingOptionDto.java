@@ -1,5 +1,7 @@
 package com.mercadolibre.dojos.dto;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.math.BigDecimal;
 
 /**
@@ -31,6 +33,7 @@ public class ShippingOptionDto {
 
 //    private SpecialDiscountDto discount;
     // possible values: mercadoenvios | store_pick_up | pick_up_in_store | custom | local_pick_up | to_agree
+    @SerializedName("shipping_type")
     private String shippingType;
 
     //Raw Data to keep original shipping cost when creating the shipment

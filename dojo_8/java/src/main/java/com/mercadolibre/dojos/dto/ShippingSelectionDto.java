@@ -1,6 +1,8 @@
 package com.mercadolibre.dojos.dto;
 
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Info use to draw the screens with shipping selections.
  * Created by mbel on 1/12/15.
@@ -8,9 +10,11 @@ package com.mercadolibre.dojos.dto;
 public class ShippingSelectionDto {
 
     private String id;
+    @SerializedName("shipping_type")
     private String shippingType;
     private String title;
     private String description;
+    @SerializedName("method_type")
     private String methodType;
 
     public ShippingSelectionDto() {

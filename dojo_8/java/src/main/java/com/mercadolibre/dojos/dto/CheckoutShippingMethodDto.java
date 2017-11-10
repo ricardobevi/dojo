@@ -2,6 +2,8 @@ package com.mercadolibre.dojos.dto;
 
 
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class CheckoutShippingMethodDto {
     private String title;
     private String subtitle;
 //    private ShippingOptionsGroupsDto shippingOptionsGroups;
+    @SerializedName("shipping_selections")
     private List<ShippingSelectionDto> shippingSelections;
 
     public CheckoutShippingMethodDto() {
