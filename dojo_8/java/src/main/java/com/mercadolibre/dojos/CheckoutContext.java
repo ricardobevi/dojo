@@ -24,12 +24,13 @@ public class CheckoutContext {
 //    // Additional info that we need to persist in the flow
 //    private final CacheInfo cacheInfo;
 
-    public CheckoutContext() {
+    public CheckoutContext(CheckoutOptionsDto checkoutOptionsDto) {
 //        paymentPreferencesList = new PaymentPreferencesList();
 //        shippingPreferences = new ShippingPreferences();
 //        orderPreferences = new OrderPreferences();
 //        userPreferences = new UserPreferences();
 //        cacheInfo = new CacheInfo();
+        setCheckoutOptionsDto(checkoutOptionsDto);
     }
 
 //    public UserPreferences getUserPreferences() {

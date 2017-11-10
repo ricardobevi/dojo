@@ -8,7 +8,6 @@ import com.mercadolibre.dojos.util.ShippingMethodType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Helper class that calculates the next step for the fallback shipping selection.
@@ -30,73 +29,39 @@ public final class InconsistencyCalculator {
     }
 
     /**
-     * Defines the possible actions that the user can take in the screen
-     */
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface Inconsistency {
-        /**
-         * Indicates that there is no inconsistency in the shipping options
-         */
-        int NONE = 0;
-
-        /**
-         * Indicates that we can't send the amount of units selected by the user
-         */
-        int CANT_SENT_X_UNITS = 1;
-
-        /**
-         * Indicates that the product can only be sent (no local pickup option) - update: it can
-         * only be sent means that the item has custom shipping (no mercadoenvios)
-         */
-        int ONLY_CAN_BE_SENT = 2;
-
-        /**
-         * Indicates that the shipping can only be agreed.
-         */
-        int ONLY_TO_AGREE = 3;
-
-        /**
-         * Indicates that both the payment and the shipping can only be agreed.
-         */
-        int AGREE_AGREE = 4;
-
-        /**
-         * Indicates that the shipping can only be pickup in store.
-         */
-        int ONLY_PUIS = 5;
-    }
-
-    /**
      * Calculates the inconsistency (in case that there is one) related to the shipping
      * options and the quantity selected by the user.
      *
      * @param checkoutContext - the CheckoutContext that contains the base data to make the calculations.
-     * @return an Inconsistency value that indicates the current case.
+     * @return an IInconsistency value that indicates the current case.
      */
-    @Inconsistency
+    @IInconsistency
     public static int getInconsistencyValue(CheckoutContext checkoutContext) {
-        @Inconsistency
-        int inconsistency = Inconsistency.NONE;
+        Inconsistency inconsistency = new Inconsistency();
+        
+        @IInconsistency
+        int inconsistencyNumber = inconsistency.getNumber();
         CheckoutOptionsDto checkoutOptions = checkoutContext.getCheckoutOptionsDto();
 
+        
         if (itemCanOnlyBeSent(checkoutOptions)) {
             // case: (fallback) only can be sent, no geolocation and no pre-loaded addresses
-            inconsistency = Inconsistency.ONLY_CAN_BE_SENT;
+            inconsistencyNumber = IInconsistency.ONLY_CAN_BE_SENT;
         } else if (itemCantSendUnitsAndHasLocalPickup(checkoutOptions)) {
             // case: can't send quantity and the product has agreement (shipping) ->  product with mercadoenvios and a one Shipping option (local_pickup)
-            inconsistency = Inconsistency.CANT_SENT_X_UNITS;
+            inconsistencyNumber = IInconsistency.CANT_SENT_X_UNITS;
         } else if (isAgreeAgree(checkoutOptions)) {
             // case: (fallback) only to agree, no geolocation and no pre-loaded addresses, only agree payment
-            inconsistency = Inconsistency.AGREE_AGREE;
+            inconsistencyNumber = IInconsistency.AGREE_AGREE;
         } else if (isShippingToAgreeOnly(checkoutOptions)) {
             // case: (fallback) only to agree, no geolocation and no pre-loaded addresses
-            inconsistency = Inconsistency.ONLY_TO_AGREE;
+            inconsistencyNumber = IInconsistency.ONLY_TO_AGREE;
         } else if (isPickupInStoreOnly(checkoutOptions)) {
             // case: (fallback) only pickup in store, no geolocation and no pre-loaded addresses
-            inconsistency = Inconsistency.ONLY_PUIS;
+            inconsistencyNumber = IInconsistency.ONLY_PUIS;
         }
 
-        return inconsistency;
+        return inconsistencyNumber;
     }
 
     /**
