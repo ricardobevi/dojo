@@ -1,0 +1,1088 @@
+{
+  "buyer": {
+    "settings": {}
+  },
+  "flow_type": "purchase",
+  "item": {
+    "available_quantity": 184,
+    "buying_mode": "buy_it_now",
+    "category_id": "MLA1903",
+    "currency_id": "ARS",
+    "id": "MLA657858958",
+    "picture": "http://mla-s1-p.mlstatic.com/425325-MLA25425182114_032017-I.jpg",
+    "price": 3200,
+    "quantity": 1,
+    "seller_id": 226075355,
+    "shipping": {
+      "free_shipping": true,
+      "local_pick_up": false,
+      "mode": "not_specified"
+    },
+    "shipping_type": "me1",
+    "site_id": "MLA",
+    "title": "Item De Testeo, Por Favor No Ofertar --kc:off"
+  },
+  "payment": {
+    "billing_info": {
+      "check_shipping": true,
+      "document": {
+        "number": "32659430",
+        "type": "DNI"
+      },
+      "label": "Documento para la facturación",
+      "skip_billing_info": false,
+      "supported_document_types": [
+        "DNI",
+        "CUIT"
+      ]
+    },
+    "combination": {
+      "feature_enable": {
+        "expressions": [
+          {
+            "type": "number",
+            "value": 0
+          },
+          {
+            "type": "number",
+            "value": 1
+          }
+        ],
+        "type": "eq"
+      },
+      "initial_switch_state": {
+        "expressions": [
+          {
+            "type": "number",
+            "value": 0
+          },
+          {
+            "type": "number",
+            "value": 1
+          }
+        ],
+        "type": "eq"
+      }
+    },
+    "document_types": [
+      {
+        "id": "DNI",
+        "max_length": 8,
+        "min_length": 7,
+        "regex": "^[0-9]{7,8}$",
+        "subtypes": null
+      },
+      {
+        "algorithm": "CUIT",
+        "id": "CUIT",
+        "max_length": 11,
+        "min_length": 11,
+        "regex": "^[0-9]{11}$",
+        "subtypes": null
+      }
+    ],
+    "payment_options": {
+      "action": {
+        "id": "go_to_bank_promos",
+        "text": "Ver promociones bancarias",
+        "url": "https://www.mercadolibre.com.ar/gz/promociones-bancos"
+      },
+      "options": [
+        {
+          "description": null,
+          "icon": "debvisa",
+          "model": {
+            "card_holder_name": "Nrrrrh",
+            "card_id": 232876812,
+            "card_settings": {
+              "card_number_pattern": [
+                4,
+                4,
+                4,
+                4
+              ],
+              "color": "#021670",
+              "font_color": "#ffffff",
+              "issuer_logo": "",
+              "issuer_logo_variant": "none",
+              "method_logo": "debvisa",
+              "method_logo_variant": "light",
+              "security_code_location": "back"
+            },
+            "combination": {
+              "disclaimer": "Con este medio no puedes combinar tus pagos.",
+              "status": "unsupported_disclaimer"
+            },
+            "config": {
+              "installments_display_order": "none"
+            },
+            "installments_options": {
+              "available_installments": [
+                {
+                  "big_fee": "0,00%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 1,
+                  "max_amount": 250000,
+                  "min_amount": 0,
+                  "rate": 0,
+                  "subtitle": null,
+                  "title": "${quantity}x ${amount}"
+                }
+              ],
+              "description": null,
+              "title": "¿En cuántas cuotas?"
+            },
+            "issuer_id": 1,
+            "issuer_name": "Visa Argentina S.A.",
+            "last_four_digits": "5619",
+            "payment_method_id": "debvisa",
+            "payment_method_name": "Visa Débito",
+            "payment_type_id": "debit_card",
+            "raw_data": {
+              "deferred_capture": "unsupported"
+            },
+            "review": {
+              "disclaimers": []
+            },
+            "supported_document_types": [
+              "DNI",
+              "CUIT"
+            ],
+            "validations": {
+              "card_number_length": 16,
+              "card_number_validation": "standard",
+              "cardholder_name_regex": "^[A-Za-zÀ-Ÿà-ÿ ,.']{4,22}$",
+              "security_code_length": 3
+            }
+          },
+          "title": "Terminada en 5619",
+          "type": "stored_card"
+        },
+        {
+          "description": null,
+          "icon": "cencosud",
+          "model": {
+            "card_holder_name": "Neksob",
+            "card_id": 232858937,
+            "card_settings": {
+              "card_number_pattern": [
+                4,
+                4,
+                4,
+                4
+              ],
+              "color": "#c5c5c5",
+              "font_color": "#333333",
+              "issuer_logo": "",
+              "issuer_logo_variant": "none",
+              "method_logo": "cencosud",
+              "method_logo_variant": "dark",
+              "security_code_location": "back"
+            },
+            "combination": {
+              "status": "supported"
+            },
+            "config": {
+              "installments_display_order": "after_input_card"
+            },
+            "installments_options": {
+              "available_installments": [
+                {
+                  "big_fee": "0,00%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 1,
+                  "max_amount": 250000,
+                  "min_amount": 0,
+                  "rate": 0,
+                  "subtitle": null,
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "57,96%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 3,
+                  "max_amount": 250000,
+                  "min_amount": 2,
+                  "rate": 7.87,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "59,22%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 6,
+                  "max_amount": 250000,
+                  "min_amount": 3,
+                  "rate": 14.28,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "56,52%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 9,
+                  "max_amount": 250000,
+                  "min_amount": 5,
+                  "rate": 19.97,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "57,03%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 12,
+                  "max_amount": 250000,
+                  "min_amount": 6,
+                  "rate": 26.62,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                }
+              ],
+              "description": null,
+              "title": "¿En cuántas cuotas?"
+            },
+            "issuer_id": 692,
+            "issuer_name": null,
+            "last_four_digits": "2830",
+            "payment_method_id": "cencosud",
+            "payment_method_name": "Cencosud",
+            "payment_type_id": "credit_card",
+            "raw_data": {
+              "deferred_capture": "supported"
+            },
+            "review": {
+              "disclaimers": [
+                {
+                  "disclaimer_type": {
+                    "condition": "default",
+                    "values": []
+                  },
+                  "message": "CFT: ${big_fee}",
+                  "visual_type": "big_fee"
+                }
+              ]
+            },
+            "supported_document_types": [
+              "DNI",
+              "CUIT"
+            ],
+            "validations": {
+              "card_number_length": 16,
+              "card_number_validation": "standard",
+              "cardholder_name_regex": "^[A-Za-zÀ-Ÿà-ÿ ,.']{4,22}$",
+              "security_code_length": 3
+            }
+          },
+          "title": "Terminada en 2830",
+          "type": "stored_card"
+        },
+        {
+          "description": null,
+          "icon": "card",
+          "model": {
+            "combination": {
+              "status": "supported"
+            },
+            "config": {
+              "installments_display_order": "after_input_card"
+            },
+            "default_card_settings": [
+              {
+                "bin_pattern": "^(34.*|37.*)",
+                "card_number_pattern": [
+                  4,
+                  6,
+                  5
+                ],
+                "security_code_location": "front",
+                "validations": {
+                  "card_number_length": 15,
+                  "security_code_length": 4
+                }
+              },
+              {
+                "bin_pattern": "^(27995)",
+                "card_number_pattern": [
+                  4,
+                  4,
+                  5
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 13,
+                  "security_code_length": 0
+                }
+              },
+              {
+                "bin_pattern": "^(30.*|36.*|38.*)",
+                "card_number_pattern": [
+                  4,
+                  6,
+                  4
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 14,
+                  "security_code_length": 3
+                }
+              },
+              {
+                "bin_pattern": "^\\d*",
+                "card_number_pattern": [
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 16,
+                  "security_code_length": 3
+                }
+              }
+            ],
+            "installments_options": {
+              "available_installments": [
+                {
+                  "big_fee": "0,00%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 1,
+                  "max_amount": 250000,
+                  "min_amount": 0,
+                  "rate": 0,
+                  "subtitle": null,
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "57,96%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 3,
+                  "max_amount": 250000,
+                  "min_amount": 2,
+                  "rate": 7.87,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "59,22%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 6,
+                  "max_amount": 250000,
+                  "min_amount": 3,
+                  "rate": 14.28,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "56,52%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 9,
+                  "max_amount": 250000,
+                  "min_amount": 5,
+                  "rate": 19.97,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                },
+                {
+                  "big_fee": "57,03%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 12,
+                  "max_amount": 250000,
+                  "min_amount": 6,
+                  "rate": 26.62,
+                  "subtitle": "(${total_amount})",
+                  "title": "${quantity}x ${amount}"
+                }
+              ],
+              "description": null,
+              "title": "¿En cuántas cuotas?"
+            },
+            "payment_method_id": null,
+            "payment_type_id": "credit_card",
+            "raw_data": {
+              "deferred_capture": "supported"
+            },
+            "supported_document_types": [
+              "DNI"
+            ]
+          },
+          "title": "Tarjeta de crédito",
+          "type": "credit_card"
+        },
+        {
+          "description": null,
+          "icon": "debit_card",
+          "model": {
+            "combination": {
+              "disclaimer": "Con este medio no puedes combinar tus pagos.",
+              "status": "unsupported_disclaimer"
+            },
+            "config": {
+              "installments_display_order": "after_input_card"
+            },
+            "default_card_settings": [
+              {
+                "bin_pattern": "^50.*",
+                "card_number_pattern": [
+                  8,
+                  4,
+                  6
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 18,
+                  "security_code_length": 3
+                }
+              },
+              {
+                "bin_pattern": "^50.*",
+                "card_number_pattern": [
+                  8,
+                  5,
+                  6
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 19,
+                  "security_code_length": 3
+                }
+              },
+              {
+                "bin_pattern": "^(501020|501021|501023|501062|501038|501057|588729|501041|501056|501075)",
+                "card_number_pattern": [
+                  6,
+                  3,
+                  6,
+                  3
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 18,
+                  "security_code_length": 3
+                }
+              },
+              {
+                "bin_pattern": "^(501080|501081)",
+                "card_number_pattern": [
+                  6,
+                  4,
+                  6,
+                  1,
+                  1,
+                  1
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 19,
+                  "security_code_length": 3
+                }
+              },
+              {
+                "bin_pattern": "^\\d*",
+                "card_number_pattern": [
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                "security_code_location": "back",
+                "validations": {
+                  "card_number_length": 16,
+                  "security_code_length": 3
+                }
+              }
+            ],
+            "installments_options": {
+              "available_installments": [
+                {
+                  "big_fee": "0,00%",
+                  "disclaimer": null,
+                  "has_interest": true,
+                  "installments": 1,
+                  "max_amount": 250000,
+                  "min_amount": 0,
+                  "rate": 0,
+                  "subtitle": null,
+                  "title": "${quantity}x ${amount}"
+                }
+              ],
+              "description": null,
+              "title": "¿En cuántas cuotas?"
+            },
+            "payment_method_id": null,
+            "payment_type_id": "debit_card",
+            "raw_data": {
+              "deferred_capture": "unsupported"
+            },
+            "supported_document_types": [
+              "DNI"
+            ]
+          },
+          "title": "Tarjeta de débito",
+          "type": "debit_card"
+        },
+        {
+          "description": "de Mercado Pago",
+          "icon": "mercadopago",
+          "model": {
+            "authentication_code": "a28ac3920b284642b42779fb31139f3f",
+            "available_balance": 300.02,
+            "combination": {
+              "status": "supported"
+            },
+            "max_allowed_amount": 1000000,
+            "min_allowed_amount": 0.01,
+            "payment_method_id": "account_money",
+            "payment_method_name": "Dinero en mi cuenta de MercadoPago",
+            "payment_type_id": "account_money",
+            "raw_data": {
+              "deferred_capture": "supported"
+            },
+            "second_password_created": false,
+            "second_password_options_creation": {
+              "max_length": 20,
+              "min_length": 8,
+              "subtitle": "Como medida de seguridad, te la pediremos para usar tu dinero en cuenta.",
+              "title": "Crea tu clave de pago y retiros"
+            },
+            "second_password_options_verification": {
+              "max_length": 20,
+              "min_length": 8,
+              "title": "Ingresa tu clave de pagos y retiros"
+            },
+            "second_password_required": false,
+            "supported_document_types": [
+              "DNI",
+              "CUIT"
+            ]
+          },
+          "title": "Dinero en tu cuenta",
+          "type": "account_money"
+        },
+        {
+          "description": "",
+          "distance_to_branches": false,
+          "icon": "transfer",
+          "row_display_type": "same_payment_methods",
+          "sub_options": [
+            {
+              "description": "",
+              "icon": "redlink",
+              "model": {
+                "combination": {
+                  "status": "supported"
+                },
+                "max_allowed_amount": 60000,
+                "min_allowed_amount": 0.01,
+                "payment_method_id": "redlink",
+                "payment_method_name": "Red Link",
+                "payment_type_id": "transfer",
+                "raw_data": {
+                  "deferred_capture": "does_not_apply"
+                },
+                "review": {
+                  "disclaimers": [
+                    {
+                      "disclaimer_type": {
+                        "condition": "delivery_time",
+                        "values": [
+                          "same_day"
+                        ]
+                      },
+                      "message": "Los pagos con este medio se acreditan de 1 a 2 días hábiles.",
+                      "visual_type": "normal"
+                    },
+                    {
+                      "disclaimer_type": {
+                        "condition": "buy_equals_pay",
+                        "values": [
+                          "true"
+                        ]
+                      },
+                      "message": "Solo podemos reservarte stock cuando el pago se acredite y esto tarda de 1 a 2 días hábiles.",
+                      "visual_type": "normal"
+                    }
+                  ]
+                },
+                "supported_document_types": [
+                  "DNI",
+                  "CUIT"
+                ]
+              },
+              "title": "Cajero",
+              "type": "atm"
+            },
+            {
+              "description": "",
+              "icon": "redlink",
+              "model": {
+                "combination": {
+                  "status": "supported"
+                },
+                "max_allowed_amount": 60000,
+                "min_allowed_amount": 0.01,
+                "payment_method_id": "redlink_home_banking",
+                "payment_method_name": "Red Link",
+                "payment_type_id": "transfer",
+                "raw_data": {
+                  "deferred_capture": "does_not_apply"
+                },
+                "review": {
+                  "disclaimers": [
+                    {
+                      "disclaimer_type": {
+                        "condition": "delivery_time",
+                        "values": [
+                          "same_day"
+                        ]
+                      },
+                      "message": "Los pagos con este medio se acreditan de 1 a 2 días hábiles.",
+                      "visual_type": "normal"
+                    },
+                    {
+                      "disclaimer_type": {
+                        "condition": "buy_equals_pay",
+                        "values": [
+                          "true"
+                        ]
+                      },
+                      "message": "Solo podemos reservarte stock cuando el pago se acredite y esto tarda de 1 a 2 días hábiles.",
+                      "visual_type": "normal"
+                    }
+                  ]
+                },
+                "supported_document_types": [
+                  "DNI",
+                  "CUIT"
+                ]
+              },
+              "title": "Home Banking",
+              "type": "atm"
+            }
+          ],
+          "title": "Transferencia bancaria desde Red Link",
+          "type": "transfer"
+        },
+        {
+          "description": "",
+          "distance_to_branches": true,
+          "icon": "cash",
+          "row_display_type": "payment_methods",
+          "sub_options": [
+            {
+              "description": "",
+              "icon": "pagofacil",
+              "model": {
+                "combination": {
+                  "status": "supported"
+                },
+                "max_allowed_amount": 15000,
+                "min_allowed_amount": 10,
+                "payment_method_id": "pagofacil",
+                "payment_method_name": "Pago Fácil",
+                "payment_type_id": "pay_point",
+                "raw_data": {
+                  "deferred_capture": "does_not_apply"
+                },
+                "review": {
+                  "disclaimers": [
+                    {
+                      "disclaimer_type": {
+                        "condition": "delivery_time",
+                        "values": [
+                          "same_day"
+                        ]
+                      },
+                      "message": "Los pagos con este medio se acreditan como máximo en 1 hora.",
+                      "visual_type": "normal"
+                    },
+                    {
+                      "disclaimer_type": {
+                        "condition": "buy_equals_pay",
+                        "values": [
+                          "true"
+                        ]
+                      },
+                      "message": "No te demores en ir a pagar, solo podemos reservarte stock cuando el pago se acredite.",
+                      "visual_type": "normal"
+                    }
+                  ]
+                },
+                "supported_document_types": [
+                  "DNI",
+                  "CUIT"
+                ]
+              },
+              "title": "Pago Fácil",
+              "type": "ticket"
+            },
+            {
+              "description": "",
+              "icon": "rapipago",
+              "model": {
+                "combination": {
+                  "status": "supported"
+                },
+                "max_allowed_amount": 60000,
+                "min_allowed_amount": 0.01,
+                "payment_method_id": "rapipago",
+                "payment_method_name": "Rapipago",
+                "payment_type_id": "pay_point",
+                "raw_data": {
+                  "deferred_capture": "does_not_apply"
+                },
+                "review": {
+                  "disclaimers": [
+                    {
+                      "disclaimer_type": {
+                        "condition": "delivery_time",
+                        "values": [
+                          "same_day"
+                        ]
+                      },
+                      "message": "Los pagos con este medio se acreditan como máximo en 1 hora.",
+                      "visual_type": "normal"
+                    },
+                    {
+                      "disclaimer_type": {
+                        "condition": "buy_equals_pay",
+                        "values": [
+                          "true"
+                        ]
+                      },
+                      "message": "No te demores en ir a pagar, solo podemos reservarte stock cuando el pago se acredite.",
+                      "visual_type": "normal"
+                    }
+                  ]
+                },
+                "supported_document_types": [
+                  "DNI",
+                  "CUIT"
+                ]
+              },
+              "title": "Rapipago",
+              "type": "ticket"
+            },
+            {
+              "description": "",
+              "icon": "bapropagos",
+              "model": {
+                "combination": {
+                  "status": "supported"
+                },
+                "max_allowed_amount": 60000,
+                "min_allowed_amount": 0.01,
+                "payment_method_id": "bapropagos",
+                "payment_method_name": "Provincia NET",
+                "payment_type_id": "pay_point",
+                "raw_data": {
+                  "deferred_capture": "does_not_apply"
+                },
+                "review": {
+                  "disclaimers": [
+                    {
+                      "disclaimer_type": {
+                        "condition": "delivery_time",
+                        "values": [
+                          "same_day"
+                        ]
+                      },
+                      "message": "Los pagos con este medio se acreditan como máximo en 1 día hábil.",
+                      "visual_type": "normal"
+                    },
+                    {
+                      "disclaimer_type": {
+                        "condition": "buy_equals_pay",
+                        "values": [
+                          "true"
+                        ]
+                      },
+                      "message": "No te demores en ir a pagar, solo podemos reservarte stock cuando el pago se acredite.",
+                      "visual_type": "normal"
+                    }
+                  ]
+                },
+                "supported_document_types": [
+                  "DNI",
+                  "CUIT"
+                ]
+              },
+              "title": "Provincia NET",
+              "type": "ticket"
+            }
+          ],
+          "title": "Efectivo",
+          "type": "pay_point"
+        }
+      ],
+      "title": "¿Cómo quieres pagar?"
+    },
+    "settings": {
+      "differential_pricing_id": null,
+      "immediate_payment": true,
+      "immediate_payment_with_shipment": true
+    }
+  },
+  "review": {
+    "summary": {
+      "details": [
+        {
+          "id": "product",
+          "title": "Producto"
+        },
+        {
+          "id": "shipment",
+          "title": "Envío"
+        },
+        {
+          "id": "coupon",
+          "title": "Descuento"
+        },
+        {
+          "id": "subtotal",
+          "title": "Subtotal"
+        },
+        {
+          "id": "payment",
+          "title": "Pagas"
+        },
+        {
+          "id": "total",
+          "title": "Total"
+        }
+      ]
+    }
+  },
+  "seller": {
+    "id": 226075355,
+    "name": null
+  },
+  "shipping": {
+    "contact_info": {
+      "contacts": [
+        {
+          "name": "",
+          "phone": "",
+          "title": "Otra persona",
+          "type": "add_contact"
+        }
+      ],
+      "input_contact": {
+        "title": "Datos de contacto",
+        "validations": [
+          {
+            "id": "phone",
+            "label": "Teléfono",
+            "max_length": 20,
+            "min_length": 8,
+            "regex": "^\\+?[0-9 \\)\\(-]{8,}$",
+            "required": true
+          },
+          {
+            "id": "name",
+            "label": "Nombre y Apellido",
+            "max_length": 30,
+            "min_length": 4,
+            "regex": "^[A-Za-zÀ-Ÿà-ÿ ,.']+$",
+            "required": true
+          }
+        ]
+      },
+      "subtitle": "Si el correo tiene algún inconveniente con la entrega, se comunicará a la brevedad.",
+      "title": "Datos de contacto"
+    },
+    "input_address": {
+      "title": "¿Dónde quieres recibirlo?",
+      "unknown_zipcode_url": "https://addresses.mercadolibre.com.ar/getZipCodeStateList?js=true&mode=mobile",
+      "validations": [
+        {
+          "id": "zip_code",
+          "label": "Código postal",
+          "max_length": 4,
+          "min_length": 4,
+          "regex": "[0-9]+",
+          "required": true,
+          "type": "input"
+        },
+        {
+          "id": "street_name",
+          "label": "Calle",
+          "max_length": 70,
+          "min_length": 4,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": true,
+          "type": "input"
+        },
+        {
+          "checkbox_available": true,
+          "id": "street_number",
+          "label": "Número",
+          "max_length": 5,
+          "min_length": 1,
+          "regex": "[0-9]+",
+          "required": true,
+          "type": "input"
+        },
+        {
+          "hint": "Ej.: Piso 8, Departamento 6",
+          "id": "additional_info",
+          "label": "Piso / Departamento (opcional)",
+          "max_length": 150,
+          "min_length": 0,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": false,
+          "type": "input"
+        },
+        {
+          "hint": "Ej.: Av. Corrientes y Libertad",
+          "id": "between_streets",
+          "label": "Entre calles (opcional)",
+          "max_length": 150,
+          "min_length": 0,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": false,
+          "type": "input"
+        },
+        {
+          "hint": "Ej.: Casa con rejas negras, frente al parque",
+          "id": "references",
+          "label": "Referencias (opcional)",
+          "max_length": 150,
+          "min_length": 0,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": false,
+          "type": "input"
+        },
+        {
+          "id": "city",
+          "label": "Localidad / Barrio",
+          "max_length": 50,
+          "min_length": 3,
+          "regex": "^[^\\*\\=\\\"\\<\\>\\{\\}\\$\\%\\^\\!\\@]*$",
+          "required": true,
+          "type": "input"
+        }
+      ]
+    },
+    "shipping_methods": {
+      "shipping_options_groups": {},
+      "shipping_selections": [
+        {
+          "description": null,
+          "id": "pick_up_in_store",
+          "method_type": "option",
+          "shipping_type": "pick_up_in_store",
+          "title": "Acordar con el vendedor"
+        }
+      ],
+      "subtitle": null,
+      "title": "¿Cómo quieres recibir el producto?"
+    },
+    "shipping_options": [
+      {
+        "description": null,
+        "icon": "to_agree",
+        "id": "to_agree",
+        "review": {
+          "disclaimers": [],
+          "icon": "to_agree"
+        },
+        "shipping_type": "to_agree",
+        "subtitle": null,
+        "title": "Acordaré luego de la compra"
+      }
+    ],
+    "stored_addresses": {
+      "addresses": [],
+      "title": "¿Qué envío prefieres?"
+    }
+  },
+  "tracks": null,
+  "user_identification": {
+    "document": {
+      "number": "32659430",
+      "type": "DNI"
+    },
+    "document_types": [
+      {
+        "id": "DNI",
+        "max_length": 8,
+        "min_length": 7,
+        "regex": "^[0-9]{7,8}$",
+        "subtypes": null
+      },
+      {
+        "algorithm": "CUIT",
+        "id": "CUIT",
+        "max_length": 11,
+        "min_length": 11,
+        "regex": "^[0-9]{11}$",
+        "subtypes": null
+      }
+    ],
+    "prompt": {
+      "expressions": [
+        {
+          "expressions": [
+            {
+              "expressions": [
+                {
+                  "type": "user_choice",
+                  "value": "shipping.type"
+                },
+                {
+                  "type": "string",
+                  "value": "to_agree"
+                }
+              ],
+              "type": "not_eq"
+            },
+            {
+              "expressions": [
+                {
+                  "type": "user_choice",
+                  "value": "shipping.type"
+                },
+                {
+                  "type": "string",
+                  "value": "local_pick_up"
+                }
+              ],
+              "type": "not_eq"
+            }
+          ],
+          "type": "and"
+        },
+        {
+          "expressions": [
+            {
+              "type": "user_choice",
+              "value": "purchase.price"
+            },
+            {
+              "type": "number",
+              "value": 1000
+            }
+          ],
+          "type": "gte"
+        }
+      ],
+      "type": "or"
+    },
+    "skip_billing_info": false,
+    "view": {
+      "title": "Documento para la facturación"
+    }
+  }
+}

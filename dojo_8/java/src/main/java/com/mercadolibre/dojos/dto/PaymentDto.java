@@ -1,7 +1,7 @@
 package com.mercadolibre.dojos.dto;
 
 
-
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Global object for specifying the payment of the checkout
@@ -10,6 +10,7 @@ package com.mercadolibre.dojos.dto;
  */
 public class PaymentDto {
 
+    @SerializedName("payment_options")
     private PaymentOptionsDto paymentOptions;
 //    private SettingsDto settings;
 //    private CouponDto coupon;
