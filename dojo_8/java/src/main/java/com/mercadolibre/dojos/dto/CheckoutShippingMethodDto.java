@@ -49,7 +49,7 @@ public class CheckoutShippingMethodDto {
 //    }
 
     public List<ShippingSelectionDto> getShippingSelections() {
-        return new ArrayList<>(shippingSelections);
+        return new ArrayList<ShippingSelectionDto>(shippingSelections);
     }
 
     public void setShippingSelections(List<ShippingSelectionDto> shippingSelections) {
