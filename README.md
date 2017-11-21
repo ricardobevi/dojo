@@ -2,7 +2,13 @@
 
 ## Ejercicios
 
-- [SpreadSheet][1]
+- [SpreadSheet][2]
+- [Bomberman][3]
+- [Pacman][4]
+- [Congrats][5]
+- [Venta de Items][6]
+- [Combinar medios de pagos][7]
+- [Inconsistencias en APPs][8]
 
 ### Problemática
 
@@ -61,4 +67,10 @@ Para los que elijan JS como lenguaje para realizar el dojo aquí encontrarán ej
 - Como escribir un test para verificar lanzamiento de exception: ([dojo_base/javascript/test/solution.js](dojo_base/javascript/test/solution.js#L15))
 
 
-[1]: ./dojo_2
+[2]: ./dojo_2
+[3]: ./dojo_3
+[4]: ./dojo_4
+[5]: ./dojo_5
+[6]: ./dojo_6
+[7]: ./dojo_7
+[8]: ./dojo_8
