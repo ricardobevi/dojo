@@ -1,5 +1,9 @@
 ## Dojos
 
+## Ejercicios
+
+- [SpreadSheet][1]
+
 ### Problemática
 
 1. Cuantos if y/o else if tiene nuestro código? 
@@ -56,3 +60,5 @@ Para los que elijan JS como lenguaje para realizar el dojo aquí encontrarán ej
 - Como escribir un test para verificar valor devuelto: ([dojo_base/javascript/test/solution.js](dojo_base/javascript/test/solution.js#L10))
 - Como escribir un test para verificar lanzamiento de exception: ([dojo_base/javascript/test/solution.js](dojo_base/javascript/test/solution.js#L15))
 
+
+[1]: ./dojo_2
