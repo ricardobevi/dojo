@@ -13,14 +13,15 @@ En función de la disponibilidad los precios del los viajes varian según las si
 - La semaman anterior se vende los viajes a un precio igual al costo más un monto fije de 100 (independientemente de la disponibilidad).
  
 
-                                                                                                                 viaje
-
+```
         Se vendió > %80                                   Resta %10
         incremento: %20                                   incremento: %20                              incremento: %10
         decremento: %5                                    decremento: %5                                          + 100
 ------------- | ------------------------------------------------ | ----------------------------------------- | -- S |
-            180                                                 90                                          15  
+            180                                                 90                                          15      Viaje
             d                                                   d                                           d
+```
+
 
 El objetivo del ejercicio es poder ofrecerle a un potencialcliente cuanto debería pagar por un pasaje para n personas en un momento determinado. 
 
