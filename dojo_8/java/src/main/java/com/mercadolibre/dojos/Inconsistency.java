@@ -9,7 +9,7 @@ public abstract class Inconsistency {
     @IInconsistency
     public abstract int getNumber();
 
-    public Inconsistency(CheckoutOptions checkoutOptions) {
+    Inconsistency(CheckoutOptions checkoutOptions) {
         this.checkoutOptions = checkoutOptions;
     }
 

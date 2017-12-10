@@ -3,7 +3,6 @@ package com.mercadolibre.dojos;
 import com.mercadolibre.dojos.dto.*;
 import com.mercadolibre.dojos.util.PaymentMethodType;
 import com.mercadolibre.dojos.util.ShippingMethodType;
-import com.sun.tools.javac.comp.Check;
 
 import java.util.List;
 

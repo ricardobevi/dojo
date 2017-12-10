@@ -5,9 +5,7 @@ package com.mercadolibre.dojos;
  */
 public class OnlyCanBeSent extends Inconsistency {
 
-    private CheckoutOptions checkoutOptions;
-
-    public OnlyCanBeSent(CheckoutOptions checkoutOptions) {
+    OnlyCanBeSent(CheckoutOptions checkoutOptions) {
         super(checkoutOptions);
     }
 
@@ -16,10 +14,10 @@ public class OnlyCanBeSent extends Inconsistency {
     }
 
     public Inconsistency happens() {
-        if ( checkoutOptions.itemCanOnlyBeSent() )
+        if ( getCheckoutOptions().itemCanOnlyBeSent() )
             return this;
 
-        return new NoneInconsitencia(checkoutOptions);
+        return new NoneInconsitencia( getCheckoutOptions() );
     }
 
     public int getNumber() {
