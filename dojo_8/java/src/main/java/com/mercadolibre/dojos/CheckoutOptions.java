@@ -57,9 +57,12 @@ public class CheckoutOptions {
      */
     public boolean itemCanOnlyBeSent() {
         // Verify shipping selections
-        ShippingDto shippingDto = dto.getShipping();
+        final ShippingDto shippingDto = dto.getShipping();
         return shippingDto.getShippingMethods().getShippingSelections().size() == 1
-                && ShippingMethodType.isCustomShipping(shippingDto.getShippingMethods().getShippingSelections().get(0).getShippingType());
+                && ShippingMethodType.isCustomShipping(
+                        shippingDto.getShippingMethods().getShippingSelections()
+                                .get(0).getShippingType()
+                );
     }
 
     /**

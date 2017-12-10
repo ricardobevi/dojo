@@ -1,8 +1,5 @@
 package com.mercadolibre.dojos;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
 public abstract class Inconsistency {
 
     private final CheckoutOptions checkoutOptions;
@@ -25,4 +22,6 @@ public abstract class Inconsistency {
     protected final CheckoutOptions getCheckoutOptions() {
         return this.checkoutOptions;
     }
+
+    public abstract Inconsistency challenge(Inconsistency otherInconsistency);
 }
