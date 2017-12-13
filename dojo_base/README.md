@@ -28,31 +28,29 @@ Programación orientada a objetos + TDD
 
 ### Pasos específicos para javascript
 
-0. Instalar [Node Version Manager](https://github.com/creationix/nvm#installation)
-
-1. Dentro de la carpeta javascript, correr en consola:
-
-    ```bash
-        nvm use
-    ```
-
-2. Instalamos las dependencias
+1. Instalamos módulos
 
     ```bash
         npm install
     ```
 
-3. Ejecutamos los tests
+2. Ejecutamos los tests
 
     ```bash
-        npm test
+        npm run test
+    ```
+    
+    o
+    
+    ```bash
+        make
     ```
 
 #### Qué necesito?
 
-0. nvm
-1. node `v8.9.1`
-2. npm  ( preferentemente 5.x o posterior )
+2. node 4.2.3
+3. npm  2.14.7
+
 
 ### Pasos específicos para java
 
