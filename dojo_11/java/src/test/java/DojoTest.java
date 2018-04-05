@@ -31,7 +31,7 @@ public class DojoTest {
 
         CheckoutStep nextStep = seleccionDeEnvio.envioADomicilio();
 
-        Assert.assertTrue(nextStep instanceof SeleccionDeMedioDePago);
+        Assert.assertEquals("SeleccionDeMedioDePago", nextStep.getClass().getSimpleName());
 	}
 
     @Test
@@ -42,7 +42,7 @@ public class DojoTest {
 
         CheckoutStep nextStep = seleccionDeEnvio.envioADomicilio();
 
-        Assert.assertTrue(nextStep instanceof Review);
+        Assert.assertEquals("Review", nextStep.getClass().getSimpleName());
     }
 
     @Test
