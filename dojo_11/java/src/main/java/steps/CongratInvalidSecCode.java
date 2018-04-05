@@ -1,5 +1,5 @@
 package steps;
 
-public class CongratInvalidSecCode {
+public class CongratInvalidSecCode extends CheckoutStep {
 
 }

@@ -1,4 +1,4 @@
 package steps;
 
-public class CongratSuccess {
+public class CongratSuccess extends CheckoutStep {
 }

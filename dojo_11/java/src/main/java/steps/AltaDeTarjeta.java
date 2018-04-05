@@ -1,4 +1,4 @@
 package steps;
 
-public class AltaDeTarjeta {
+public class AltaDeTarjeta extends CheckoutStep {
 }

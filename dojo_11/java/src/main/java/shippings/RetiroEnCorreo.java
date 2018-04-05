@@ -1,4 +1,4 @@
 package shippings;
 
-public class RetiroEnCorreo {
+public class RetiroEnCorreo implements ShippingOption {
 }

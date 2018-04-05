@@ -1,4 +1,4 @@
 package steps;
 
-public class AltaDeDireccion {
+public class AltaDeDireccion extends CheckoutStep {
 }

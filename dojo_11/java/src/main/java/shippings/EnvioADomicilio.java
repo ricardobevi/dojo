@@ -1,4 +1,4 @@
 package shippings;
 
-public class EnvioADomicilio {
+public class EnvioADomicilio implements ShippingOption {
 }

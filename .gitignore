@@ -10,8 +10,5 @@ coverage/
 *.orig
 all.zip
 merged_keys.po
-<<<<<<< HEAD
 *.class
-=======
 dojo_11/java/out
->>>>>>> 6c19ff1... dojo edit mode

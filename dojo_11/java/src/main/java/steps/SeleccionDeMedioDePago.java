@@ -1,4 +1,4 @@
 package steps;
 
-public class SeleccionDeMedioDePago {
+public class SeleccionDeMedioDePago extends CheckoutStep {
 }
