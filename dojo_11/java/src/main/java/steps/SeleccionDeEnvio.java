@@ -6,6 +6,10 @@ import shippings.ShippingOption;
 
 public class SeleccionDeEnvio extends CheckoutStep{
 
+    public SeleccionDeEnvio(boolean editMode) {
+        setEditMode(editMode);
+    }
+
     public CheckoutStep envioADomicilio() {
         if (!CheckoutStep.isEditMode()) {
             return new SeleccionDeMedioDePago();

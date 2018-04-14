@@ -27,7 +27,7 @@ public class DojoTest {
 
 	    // Paso 1 -> ¿Como queres recibir el producto? 00_01 -> Enviar a mi ubicacion actual
         // Paso 2 -> Envio a Villa Urquiza 01_01
-        SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio();
+        SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio(false);
 
         CheckoutStep nextStep = seleccionDeEnvio.envioADomicilio();
 
