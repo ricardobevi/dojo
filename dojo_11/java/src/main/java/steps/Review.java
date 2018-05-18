@@ -1,7 +1,11 @@
 package steps;
 
-public class Review extends CheckoutStep{
+public class Review implements CheckoutStep{
     public SeleccionDeEnvio modificarEnvio() {
-        return new SeleccionDeEnvio(true);
+        return new SeleccionDeEnvio(new Review());
+    }
+
+    public SeleccionDeMedioDePago modificarMedioDePago() {
+        return new SeleccionDeMedioDePago(this);
     }
 }

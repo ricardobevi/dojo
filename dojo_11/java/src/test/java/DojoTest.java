@@ -1,8 +1,6 @@
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import shippings.EnvioADomicilio;
-import shippings.RetiroEnCorreo;
 import steps.*;
 
 /**
@@ -28,7 +26,7 @@ public class DojoTest {
 	    // Paso 1 -> ¿Como queres recibir el producto? 00_01 -> Enviar a mi ubicacion actual
         // Paso 2 -> Envio a Villa Urquiza 01_01
         // Zeplin: https://zpl.io/25zKgWV
-        SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio(false);
+        SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio();
 
         CheckoutStep nextStep = seleccionDeEnvio.envioADomicilio();
 
@@ -60,4 +58,68 @@ public class DojoTest {
 
         Assert.assertEquals(MapaDeSucursales.class, nextStep.getClass());
     }
+
+
+	@Test
+	public void cuando_ModificaMPDesdeReview_ElijeTCPreCargada_GatewaySolicitaSecCode_VuelveAReview(){
+		Review review = new Review();
+		Gateway gateway = new GatewayToSecCode();
+		TarjetaPreCargada tarjetaPreCargada = new TarjetaPreCargada();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago = review.modificarMedioDePago();
+
+		SecCode secCode = (SecCode) seleccionDeMedioDePago.tarjetaPreCargada(tarjetaPreCargada, gateway);
+
+		CheckoutStep reviewStep = secCode.input(232);
+
+		// Zeplin: https://zpl.io/br1Km7L
+		Assert.assertEquals(Review.class, reviewStep.getClass());
+	}
+
+	@Test
+	public void cuando_ModificaMPDesdeReview_ElijeTCPreCargada_GatewayNoSolicitaSecCode_VuelveAReview(){
+		Review review = new Review();
+		Gateway gateway = new GatewayNoSecCode();
+		TarjetaPreCargada tarjetaPreCargada = new TarjetaPreCargada();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago = review.modificarMedioDePago();
+
+		CheckoutStep reviewStep = seleccionDeMedioDePago.tarjetaPreCargada(tarjetaPreCargada, gateway);
+
+		// Zeplin: https://zpl.io/br1Km7L
+		Assert.assertEquals(Review.class, reviewStep.getClass());
+	}
+
+
+	@Test
+	public void cuando_ModificaMPDesdeReview_CargaNuevaTC_SolicitaSecCode_VuelveAReview(){
+		Review review = new Review();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago = review.modificarMedioDePago();
+
+		SecCode secCode = (SecCode) seleccionDeMedioDePago.nuevaTC();
+
+		CheckoutStep reviewStep = secCode.input(232);
+
+		Assert.assertEquals(Review.class, reviewStep.getClass());
+	}
+
+/*
+	@Test
+	public void cuando_(){
+		Review review = new Review();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago = review.modificarMedioDePago();
+
+		SecCode secCode = (SecCode) seleccionDeMedioDePago.nuevaTCViaQR();
+
+		CheckoutStep reviewStep = secCode.input(232);
+
+		Assert.assertEquals(Review.class, reviewStep.getClass());
+	}
+
+*/
+
+
+
 }
