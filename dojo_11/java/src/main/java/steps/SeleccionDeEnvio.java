@@ -19,4 +19,12 @@ public class SeleccionDeEnvio implements CheckoutStep{
     public CheckoutStep retiroEnCorreo() {
         return new MapaDeSucursales();
     }
+
+	public CheckoutStep seleccionarEnvio(EnvioADomicilio envio){
+		return new SeleccionDeMedioDePago(envio);
+	}
+
+	public Inconsistencia seleccionarEnvio(Express envio) {
+		return new Inconsistencia();
+	}
 }

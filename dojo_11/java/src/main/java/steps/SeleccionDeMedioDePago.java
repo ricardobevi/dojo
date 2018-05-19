@@ -3,6 +3,7 @@ package steps;
 public class SeleccionDeMedioDePago implements CheckoutStep {
 
 	private CheckoutStep nextStep;
+	private Envio envio;
 
 	public SeleccionDeMedioDePago() {
 		this.nextStep = new Review();
@@ -10,6 +11,14 @@ public class SeleccionDeMedioDePago implements CheckoutStep {
 
 	public SeleccionDeMedioDePago(CheckoutStep nextStep) {
 		this.nextStep = nextStep;
+	}
+
+	public SeleccionDeMedioDePago(Envio envio) {
+		this.envio = envio;
+	}
+
+	public CheckoutStep seleccionarMedioDePago(Rapipago medioDePago){
+		return new Review(envio, medioDePago);
 	}
 
 	public CheckoutStep tarjetaPreCargada(TarjetaPreCargada tarjetaPreCargada, Gateway gateway) {

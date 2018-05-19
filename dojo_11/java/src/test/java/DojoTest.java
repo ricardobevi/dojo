@@ -104,21 +104,80 @@ public class DojoTest {
 		Assert.assertEquals(Review.class, reviewStep.getClass());
 	}
 
-/*
 	@Test
-	public void cuando_(){
-		Review review = new Review();
+	public void cuando_SeccionaEnvioConCosto_MedioOffLimiteMonto_LlegaAReview(){
+		SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio();
 
-		SeleccionDeMedioDePago seleccionDeMedioDePago = review.modificarMedioDePago();
+		SeleccionDeMedioDePago seleccionDeMedioDePago = (SeleccionDeMedioDePago) seleccionDeEnvio.seleccionarEnvio(new EnvioADomicilio(200.0));
 
-		SecCode secCode = (SecCode) seleccionDeMedioDePago.nuevaTCViaQR();
+		CheckoutStep review = seleccionDeMedioDePago.seleccionarMedioDePago(new Rapipago(1000.0));
 
-		CheckoutStep reviewStep = secCode.input(232);
-
-		Assert.assertEquals(Review.class, reviewStep.getClass());
+		Assert.assertEquals(Review.class, review.getClass());
 	}
 
-*/
+	@Test
+	public void cuando_SeccionaEnvioConCosto_MedioOffLimiteMonto_LlegaAReview_ModificaEnvioEnReview_Inconsistencia(){
+		SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago =
+				(SeleccionDeMedioDePago) seleccionDeEnvio.seleccionarEnvio(new EnvioADomicilio(200.0));
+
+		Review review = (Review) seleccionDeMedioDePago.seleccionarMedioDePago(new Rapipago(1000.0));
+
+		SeleccionDeEnvio seleccionDeEnvioModificacion = review.modificarEnvio();
+
+		Inconsistencia inconsistencia = seleccionDeEnvioModificacion.seleccionarEnvio(new Express());
+
+		Assert.assertEquals(Inconsistencia.class, inconsistencia.getClass());
+	}
+
+	@Test
+	public void cuando_SeccionaEnvioConCosto_MedioOffLimiteMonto_LlegaAReview_ModificaEnvioEnReview_NOInconsistencia(){
+		SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago =
+				(SeleccionDeMedioDePago) seleccionDeEnvio.seleccionarEnvio(new EnvioADomicilio(200.0));
+
+		Review review = (Review) seleccionDeMedioDePago.seleccionarMedioDePago(new Rapipago(1000.0));
+
+		SeleccionDeEnvio seleccionDeEnvioModificacion = review.modificarEnvio();
+
+		Review review2 = seleccionDeEnvioModificacion.seleccionarEnvio(new Express());
+
+		Assert.assertEquals(Review.class, review2.getClass());
+	}
+
+
+	/*
+	 * Selecciona envio con costo
+	 * Selecciona medio off con limite de monto
+	 * review modifica el envio
+	 * selecciona medio de envio con costo mayor al limite
+	 * despliega incosistencia de medio de pago
+	 * Vuelve a seleccion de medio de envio
+	 */
+
+	/*
+	@Test
+	public void cuando_SeccionaEnvioConCosto_MedioOffLimiteMonto_ModificaEnvioEnReview_Inconsistencia_VuelveASeleccionDeEnvio(){
+		SeleccionDeEnvio seleccionDeEnvio = new SeleccionDeEnvio();
+
+		SeleccionDeMedioDePago seleccionDeMedioDePago = seleccionDeEnvio.seleccionarEnvio(new EnvioADomicilio());
+
+		Review review = seleccionDeMedioDePago.seleccionarMedioDePago(new Rapipago(1200));
+
+		SeleccionDeEnvio seleccionDeEnvioModificacion = review.modificarEnvio();
+
+		Inconsistencia inconsistencia = seleccionDeEnvioModificacion.seleccionarEnvio(new Express());
+
+		SeleccionDeEnvio seleccionDeEnvioDesdeInconsistencia = inconsistencia.modificarEnvio();
+
+		Review review2 = seleccionDeEnvioDesdeInconsistencia.seleccionarEnvio(new EnvioADomicilio());
+
+	}
+	*/
+
+
 
 
 
